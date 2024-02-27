@@ -1,1 +1,18 @@
 hello
+
+
+
+
+//Controller Class
+@RestController
+public class Controller{
+
+
+	@AutoWired
+	private UsersService userService;
+
+	@PostMapping("/users)
+	public ResponseEntity<ResponseStructure<Users>> saveUser(@RequestBody Users user){
+	return userService.saveUsers(user)
+	}
+}
